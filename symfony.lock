@@ -16,8 +16,20 @@
             "src/Entity/.gitignore"
         ]
     },
+    "behat/behat": {
+        "version": "v3.5.0"
+    },
+    "behat/gherkin": {
+        "version": "v4.6.0"
+    },
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "cocur/slugify": {
         "version": "v3.0"
+    },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -225,6 +237,9 @@
     },
     "symfony/cache-contracts": {
         "version": "v1.1.5"
+    },
+    "symfony/class-loader": {
+        "version": "v3.4.31"
     },
     "symfony/config": {
         "version": "v4.3.4"
