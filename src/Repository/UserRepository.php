@@ -47,7 +47,7 @@ class UserRepository extends ServiceEntityRepository
             ->orderBy('u.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
+            ->getArrayResult()
         ;
     }
     
