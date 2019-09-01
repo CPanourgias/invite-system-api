@@ -27,12 +27,12 @@ class SenderController extends AbstractController
     }
 
     /**
-     * @Route("/send_{inv_id}", name="send_an_invite")
+     * @Route("/send_{usr_id}", name="send_an_invite")
      */
-    public function send($id, $inv_id, UserRepository $userRepository) 
+    public function send($id, $usr_id, UserRepository $userRepository) 
     {
         $sender = $userRepository->returnUser($id);
-        $reciever = $userRepository->returnUser($inv_id);
+        $reciever = $userRepository->returnUser($usr_id);
         $em = $this->getDoctrine()->getManager();
         $invite = new Invite;
         $invite

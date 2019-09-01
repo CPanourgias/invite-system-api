@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\InviteRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,19 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("/users", name="user")
      */
-    public function index()
+    public function users(UserRepository $userRepository)
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return new JsonResponse($userRepository->getAll());
     }
 
     /**
-     * @Route("/invite", name="invite")
+     * @Route("/invites", name="invite")
      */
-    public function invite(InviteRepository $inviteRepository)
+    public function invites(InviteRepository $inviteRepository)
     {
         return new JsonResponse($inviteRepository->getAll());
     }

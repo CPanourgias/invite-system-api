@@ -62,4 +62,9 @@ class UserRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function getAll() {
+        $qb = $this->createQueryBuilder('i');
+        return $qb->getQuery()->getArrayResult();
+    }
 }
