@@ -11,9 +11,23 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/users');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->headers->contains(
+                'Content-Type',
+                'application/json'
+            ),
+            'the "Content-Type" header is "application/json"'
+        );
 
         $client->request('GET', '/invites');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->headers->contains(
+                'Content-Type',
+                'application/json'
+            ),
+            'the "Content-Type" header is "application/json"'
+        );
     }
 
 }
